@@ -1,0 +1,25 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/api-extractor/v7/api-extractor.schema.json",
+  "mainEntryPointFilePath": "dist/tsc/index.d.ts",
+  "messages": {
+    "extractorMessageReporting": {
+      "default": {
+        "logLevel": "none"
+      }
+    }
+  },
+  "bundledPackages": [],
+  "compiler": {
+    "tsconfigFilePath": "tsconfig.json"
+  },
+  "dtsRollup": {
+    "enabled": true,
+    "untrimmedFilePath": "dist/solar.esm.d.ts"
+  },
+  "apiReport": {
+    "enabled": false
+  },
+  "docModel": {
+    "enabled": false
+  }
+}

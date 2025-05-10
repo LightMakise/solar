@@ -1,0 +1,26 @@
+{
+  "name": "solar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node ./scripts/dev.js",
+    "build": "node ./build/esbuild.conf.js",
+    "test": "vitest",
+    "build:types": "tsc && api-extractor run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.8.1",
+  "dependencies": {
+    "@microsoft/api-extractor": "^7.52.5",
+    "cross-spawn": "^7.0.6",
+    "esbuild": "^0.25.2",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.1"
+  },
+  "engines": {
+    "node": ">=22.14.0"
+  }
+}
