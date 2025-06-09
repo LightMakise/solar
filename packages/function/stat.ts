@@ -1,4 +1,4 @@
-import { isFunction } from '../index';
+import {isFunction} from '../index';
 /**
  * 包装一个函数，并统计其执行时间。
  * 
@@ -13,22 +13,22 @@ import { isFunction } from '../index';
  * ```
  */
 export function stat(fn: Function, tag: string = '') {
-  if (!isFunction(fn)) {
-    throw new Error('stat: fn must be a function');
-  }
-  return function (this: any, ...args: any[]) {
-    const start = performance.now();
-    const result = fn.apply(this, args);
-    console.log('result', result instanceof Promise)
-    if (result instanceof Promise) {
-      result.then(() => {
-        const end = performance.now();
-        console.log(`function ${tag ? tag : fn.name} () run time:${(end - start).toFixed(3)}ms`);
-      })
-    } else {
-      const end = performance.now();
-      console.log(`function ${tag ? tag : fn.name} () run time:${(end - start).toFixed(3)}ms`);
+    if (!isFunction(fn)) {
+        throw new Error('stat: fn must be a function1');
     }
-    return result;
-  };
+    return function (this: any, ...args: any[]) {
+        const start = performance.now();
+        const result = fn.apply(this, args);
+        console.log('result', result instanceof Promise)
+        if (result instanceof Promise) {
+            result.then(() => {
+                const end = performance.now();
+                console.log(`function ${tag ? tag : fn.name} () run time:${(end - start).toFixed(3)}ms`);
+            })
+        } else {
+            const end = performance.now();
+            console.log(`function ${tag ? tag : fn.name} () run time:${(end - start).toFixed(3)}ms`);
+        }
+        return result;
+    };
 }
