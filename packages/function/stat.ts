@@ -1,4 +1,4 @@
-import {isFunction} from '../index';
+import { isFunction } from '../index';
 /**
  * 包装一个函数，并统计其执行时间。
  * 
@@ -14,7 +14,7 @@ import {isFunction} from '../index';
  */
 export function stat(fn: Function, tag: string = '') {
     if (!isFunction(fn)) {
-        throw new Error('stat: fn must be a function1');
+        throw new Error('stat: fn must be a function');
     }
     return function (this: any, ...args: any[]) {
         const start = performance.now();

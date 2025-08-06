@@ -83,6 +83,7 @@ declare function isSymbol(v: any): boolean;
  * @returns Boolean
  */
 declare function isFunction(v: any): boolean;
+declare function sleep(time: number): Promise<void>;
 //#endregion
 //#region packages/function/stat.d.ts
 /**
@@ -100,5 +101,14 @@ declare function isFunction(v: any): boolean;
  */
 declare function stat(fn: Function, tag?: string): (this: any, ...args: any[]) => any;
 //#endregion
-export { isArray, isBoolean, isEmpty, isFunction, isMap, isNull, isNumber, isObject, isSet, isString, isSymbol, isUndefined, isWeakMap, isWeakSet, stat };
+//#region packages/math/random.d.ts
+/**
+ * 获取一个随机数 默认0-100
+ * @param max 最大
+ * @param min 最小
+ * @returns
+ */
+declare const random: (max?: number, min?: number) => number;
+//#endregion
+export { isArray, isBoolean, isEmpty, isFunction, isMap, isNull, isNumber, isObject, isSet, isString, isSymbol, isUndefined, isWeakMap, isWeakSet, random, sleep, stat };
 //# sourceMappingURL=index.d.ts.map

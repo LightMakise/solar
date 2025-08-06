@@ -2,7 +2,7 @@
   "name": "solar",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist-rolldown/index.js",
   "type": "module",
   "scripts": {
     "dev": "node ./scripts/dev.mjs --mode=esm ",

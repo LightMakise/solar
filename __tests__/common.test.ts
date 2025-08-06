@@ -1,7 +1,7 @@
-import {describe, test, expect} from 'vitest'
-import {isEmpty, stat} from '../dist-rolldown/index'
+import { describe, test, expect } from 'vitest'
+import { isEmpty, random, stat } from '../dist-rolldown/index'
 
-describe('common测试',() => {
+describe('common测试', () => {
     test('isEmpty 测试', () => {
 
         // expect().toBe(true)
@@ -15,6 +15,9 @@ describe('common测试',() => {
         expect(isEmpty(new WeakMap())).toBe(false)
         expect(isEmpty(new Set())).toBe(true)
         expect(isEmpty(new WeakSet())).toBe(false)
-        expect(isEmpty(() => {})).toBe(true)
+        expect(isEmpty(() => { })).toBe(true)
+        const num = random(500, 600)
+        console.log('num', num)
+        expect(num).lessThan(600).greaterThan(500)
     })
 })

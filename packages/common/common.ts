@@ -5,32 +5,32 @@
  * @returns Boolean
  */
 export function isEmpty(v: any): boolean {
-    if (isString(v)) {
-      return v === ''
-    }
-    if (isNumber(v)) {
-      return v === 0
-    }
-    if (isUndefined(v) || isNull(v)) {
-      return true
-    }
-    if (isBoolean(v) || isSymbol(v)) {
-      return false
-    }
-    if (isArray(v)) {
-      return v.length === 0
-    }
-    if (isObject(v)) {
-      return Object.keys(v).length === 0
-    }
-    if (isMap(v) ||  isSet(v) ) {
-      return v.size === 0
-    }
-    if (isFunction(v)) {
-      return true
-    }
-    // isWeakMap(v) || isWeakSet(v)
+  if (isString(v)) {
+    return v === ''
+  }
+  if (isNumber(v)) {
+    return v === 0
+  }
+  if (isUndefined(v) || isNull(v)) {
+    return true
+  }
+  if (isBoolean(v) || isSymbol(v)) {
     return false
+  }
+  if (isArray(v)) {
+    return v.length === 0
+  }
+  if (isObject(v)) {
+    return Object.keys(v).length === 0
+  }
+  if (isMap(v) || isSet(v)) {
+    return v.size === 0
+  }
+  if (isFunction(v)) {
+    return true
+  }
+  // isWeakMap(v) || isWeakSet(v)
+  return false
 }
 /**
  * 是否为字符串
@@ -135,4 +135,12 @@ export function isSymbol(v: any): boolean {
  */
 export function isFunction(v: any): boolean {
   return Object.prototype.toString.call(v) === '[object Function]';
+}
+
+export function sleep(time: number): Promise<void> {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve();
+    }, time);
+  });
 }
